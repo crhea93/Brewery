@@ -1,12 +1,21 @@
 '''
 Create map
 '''
-import plotly.offline as py
+import plotly
+import dash_core_components as dcc
+
+
+import plotly.plotly as py
+
 import pandas as pd
 
+#Read in Data Frame
 df = pd.read_table('StateTaxes.txt', delim_whitespace=True, names=('State','TaxRate'))
 for col in df.columns:
     df[col] = df[col].astype(str)
+
+
+#Color Scale
 scl = [[0.0, 'rgb(242,240,247)'],[0.2, 'rgb(218,218,235)'],[0.4, 'rgb(188,189,220)'],\
             [0.6, 'rgb(158,154,200)'],[0.8, 'rgb(117,107,177)'],[1.0, 'rgb(84,39,143)']]
 
@@ -34,6 +43,10 @@ data = [ dict(
             title = "State Tax Rate")
         ) ]
 
+
+
+
+
 layout = dict(
         title = '2018 State and Federal Beer Tax by State<br>(Hover for breakdown)',
         geo = dict(
@@ -44,4 +57,5 @@ layout = dict(
              )
 
 fig = dict( data=data, layout=layout )
-py.offline.plot( fig, filename='d3-cloropleth-map.html' )
+
+url = py.plot( fig, filename='TotalBeerTax',auto_open=False )
