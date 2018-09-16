@@ -11,7 +11,11 @@
     </section>
     <section id="readin"><br>
             Enter your the Number of Gallons: <input type="text" value="1" id="gallons"/><br><br>
-            <button onclick="BrewMap(document.getElementById('gallons').value);return false">Update</button>
+            <select id="FedTax">
+                <option value="1" selected="selected">No Federal Tax</option>
+                <option value="2">Federal Tax</option>
+            </select>
+            <button onclick="BrewMap(document.getElementById('gallons').value,document.getElementById('FedTax'));return false">Update</button>
     </section>
     <section id='brewtaxmap'>
         <script src="js/brewmap_init.js"></script>
