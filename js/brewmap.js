@@ -1,7 +1,7 @@
 
 
 function BrewMap(barrels,FedTax){
-    Plotly.d3.csv('https://raw.githubusercontent.com/crhea93/Brewery/gh-pages/StateTaxes.csv', function (err, rows) {
+    Plotly.d3.csv('https://raw.githubusercontent.com/crhea93/Brewery/master/StateTaxes.csv', function (err, rows) {
 
         function unpack(rows, key) {
             return rows.map(function (row) {
