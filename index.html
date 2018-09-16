@@ -4,18 +4,19 @@
     <title>Brewery Calculations</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
       <script SRC="js/brewmap.js"></script>
+      <link rel="stylesheet" href="stylesheet.css">
   </head>
   <body>
     <section id='main'>
-      <h1>Brews</h1>
+      <h1 align="center">Brews</h1>
     </section>
-    <section id="readin"><br>
-            Enter your the Number of Gallons: <input type="text" value="1" id="gallons"/><br><br>
+    <section id="readin" align="center"><br>
+            Enter your the Number of Barrels: <input type="text" value="1" id="barrels"/><br><br>
             <select id="FedTax">
                 <option value="1" selected="selected">No Federal Tax</option>
                 <option value="2">Federal Tax</option>
             </select>
-            <button onclick="BrewMap(document.getElementById('gallons').value,document.getElementById('FedTax'));return false">Update</button>
+            <button onclick="BrewMap(document.getElementById('barrels').value,document.getElementById('FedTax'));return false">Update</button>
     </section>
     <section id='brewtaxmap'>
         <script src="js/brewmap_init.js"></script>

@@ -1,6 +1,6 @@
 
 
-function BrewMap(gallons,FedTax){
+function BrewMap(barrels,FedTax){
     Plotly.d3.csv('https://raw.githubusercontent.com/crhea93/Brewery/master/StateTaxes.csv', function (err, rows) {
 
         function unpack(rows, key) {
@@ -15,11 +15,11 @@ function BrewMap(gallons,FedTax){
         var fed_bool = FedTax.options[FedTax.selectedIndex].value;
         if (fed_bool !== '1') {
             for (i = 0; i < taxes.length; i++) {
-                taxes[i] = taxes[i]* 43 * gallons + 3*43*gallons;
+                taxes[i] = taxes[i]*barrels + 3*43*barrels;
             }
         } else {
             for (i = 0; i < taxes.length; i++) {
-                taxes[i] = taxes[i] * 43 * gallons;
+                taxes[i] = taxes[i] * 43 * barrels;
             }
         }
         var data = [{
@@ -36,7 +36,7 @@ function BrewMap(gallons,FedTax){
                 [0.8, 'rgb(117,107,177)'], [1, 'rgb(84,39,143)']
             ],
             colorbar: {
-                title: 'Taxes per Gallon (USD)',
+                title: 'Taxes per Barrel (USD)',
                 thickness: 0.2
             },
             marker: {
@@ -49,7 +49,7 @@ function BrewMap(gallons,FedTax){
 
 
         var layout = {
-            title: '2018 State Tax For Beers per barrel (UPDATED)',
+            title: '2018 State Tax For Beers per Barrel (UPDATED)',
             geo: {
                 scope: 'usa',
                 showlakes: true,

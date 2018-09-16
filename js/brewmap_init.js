@@ -26,7 +26,7 @@
                 [0.8, 'rgb(117,107,177)'], [1, 'rgb(84,39,143)']
             ],
             colorbar: {
-                title: 'Taxes per Gallon (USD)',
+                title: 'Taxes per Barrel (USD)',
                 thickness: 0.2
             },
             marker: {
@@ -39,7 +39,7 @@
 
 
         var layout = {
-            title: '2018 State Tax For Beers per barrel',
+            title: '2018 State Tax For Beers per Barrel',
             geo: {
                 scope: 'usa',
                 showlakes: true,
