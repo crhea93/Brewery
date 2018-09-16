@@ -12,6 +12,7 @@ h1 {
     font-family: 'monospace', Courier;
     font-size: 35px;
     font-weight: normal;
+    color: rgb(19,24,98);
     margin-top: 5px;
 }
 
@@ -19,4 +20,5 @@ h1 {
 .someclass { color: red; }
 
 /* Applies to the element with <... id="someid"> specified. */
-#FedTax { color: green; }
+#FedTax { color: rgb(84,107,171); }
+#readin { color: rgb(46,68,130)}

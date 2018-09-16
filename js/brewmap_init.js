@@ -1,4 +1,4 @@
-    Plotly.d3.csv('https://raw.githubusercontent.com/crhea93/Brewery/master/StateTaxes.csv', function (err, rows) {
+    Plotly.d3.csv('https://raw.githubusercontent.com/crhea93/Brewery/gh-pages/StateTaxes.csv', function (err, rows) {
 
 
         function unpack(rows, key) {
@@ -8,9 +8,7 @@
         }
 
         var taxes = unpack(rows, 'Taxes');
-        for (i=0;i<taxes.length;i++){
-            taxes[i] = taxes[i]*43; // 43 gallons in a barrel
-        }
+
 
         var data = [{
             type: 'choropleth',

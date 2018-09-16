@@ -1,7 +1,7 @@
 
 
 function BrewMap(barrels,FedTax){
-    Plotly.d3.csv('https://raw.githubusercontent.com/crhea93/Brewery/master/StateTaxes.csv', function (err, rows) {
+    Plotly.d3.csv('https://raw.githubusercontent.com/crhea93/Brewery/gh-pages/StateTaxes.csv', function (err, rows) {
 
         function unpack(rows, key) {
             return rows.map(function (row) {
@@ -15,11 +15,11 @@ function BrewMap(barrels,FedTax){
         var fed_bool = FedTax.options[FedTax.selectedIndex].value;
         if (fed_bool !== '1') {
             for (i = 0; i < taxes.length; i++) {
-                taxes[i] = taxes[i]*barrels + 3*43*barrels;
+                taxes[i] = taxes[i]*barrels + 3 * barrels;
             }
         } else {
             for (i = 0; i < taxes.length; i++) {
-                taxes[i] = taxes[i] * 43 * barrels;
+                taxes[i] = taxes[i] * barrels;
             }
         }
         var data = [{
